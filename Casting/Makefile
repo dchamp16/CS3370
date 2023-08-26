@@ -1,5 +1,5 @@
 all compile run
 compile:
-	g++ ./Main.cpp -o Main
+	g++ Main.cpp -o Main
 run:
-	./Main.exe
+	Main.exe
