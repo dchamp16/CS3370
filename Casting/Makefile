@@ -1,4 +1,4 @@
-all compile run
+all: compile run
 compile:
 	g++ Main.cpp -o Main
 run:
