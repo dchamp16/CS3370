@@ -4,7 +4,24 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    /*
+    const cast
+    1. the const_Cast is used to change or manipulate the const behavior of the source pointer
+    it means we can perform the const in two ways
+    setting a const pointer to a non const pointer or deleting or removing the const from a const pointer
+    Syntax:
+    const_Cast<new_data_type>(expression)
+    */
+    auto func = [](int *ptr)
+    {
+        return *ptr;
+    };
+    const int num1{40};
+    const int *num2{&num1};
 
+    int *newValue = const_cast<int *>(num2);
+
+    func(newValue);
     return 0;
 }
 
@@ -12,7 +29,7 @@ int main(int argc, char *argv[])
 
 /*
 implicit casting - automatic cast conversion by computer
-lowest to higher
+lowest to higher hiearcy
 bool -> char -> short int -> int -> unsigned int -> long int ->
 unsigned long int -> long long int -> float -> double -> long double
 */
@@ -165,16 +182,12 @@ Syntax:
 reinterpret_cast<new_data_type>(expression)
 */
 
-// int x = 10;
-// int *ptr = reinterpret_cast<int *>(&x);
+// int *ptr = new int(65);
+// char *ch = reinterpret_cast<char *>(ptr);
 
-/*print the address of x and value of the ptr*/
-// cout << "Address of x: " << &x << endl;
-// cout << "Value of pointer ptr: " << *ptr << endl;
-
-// *ptr = 20;
-
-// print new value of x
-// cout << "New value of x: " << x << endl;
+// cout << "value ptr: " << ptr << endl;
+// cout << "value ch: " << ch << endl;
+// cout << "value ptr: " << *ptr << endl;
+// cout << "value ch: " << *ch << endl;
 // return 0;
 // }
