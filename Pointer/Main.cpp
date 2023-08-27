@@ -4,6 +4,8 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    /*
+    // Question 1.
     int a[] = {10, 15, 4, 25, 3, -4};
     int *p = &a[2]; // element #2 == 4
 
@@ -14,18 +16,19 @@ int main(int argc, char *argv[])
          << "\nc. p - a: " << p - a
          << "\nd. a[*p++]: " << a[*p++]
          << "\ne. *(a+a[2]): " << *(a + a[2]) << endl;
-
-    /*
-    char s[] = "desolate", *p = s;
-
-    cout << *p++ << endl; //output: e
-    cout << *(p++) << endl; //output: 
-    cout << (*p)++ << endl; //output: 
-    cout << *++p << endl; //output: 
-    cout << *(++p) << endl; //output: 
-    cout << ++*p << endl; //output: 
-    cout << ++(*p) << endl; //output: 
-    cout << s << endl; //output: 
     */
+
+    char s[] = "desolate";
+    char *p = s;
+
+    cout << s << endl; // output: d
+    // cout << *(p++) << endl; //output: d
+    // cout << (*p)++ << endl; //output: d
+    // cout << *++p << endl; //output: e
+    // cout << *(++p) << endl; //output: e
+    // cout << ++*p << endl; //output: e
+    // cout << ++(*p) << endl; //output: e
+    // cout << s << endl; //output: desolate
+
     return 0;
 }
