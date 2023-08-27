@@ -14,5 +14,18 @@ int main(int argc, char *argv[])
          << "\nc. p - a: " << p - a
          << "\nd. a[*p++]: " << a[*p++]
          << "\ne. *(a+a[2]): " << *(a + a[2]) << endl;
+
+    /*
+    char s[] = "desolate", *p = s;
+
+    cout << *p++ << endl; //output: e
+    cout << *(p++) << endl; //output: 
+    cout << (*p)++ << endl; //output: 
+    cout << *++p << endl; //output: 
+    cout << *(++p) << endl; //output: 
+    cout << ++*p << endl; //output: 
+    cout << ++(*p) << endl; //output: 
+    cout << s << endl; //output: 
+    */
     return 0;
 }
