@@ -1,0 +1,17 @@
+type - defines a set ofvalues with associated operation
+
+value - is set a bit interpreted as some type
+
+object - is some memory that holds a value of some type
+
+varibales - is names object
+
+x = y
+L  R = value
+
+constexpr - bound to literal
+enum {n = 7}; - n is an rvalue() (no memory used)
+
+unsigned - ?
+
+size_t (#include <cstddef>) - when unsigned quantity
