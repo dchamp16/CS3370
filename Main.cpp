@@ -3,11 +3,11 @@ using namespace std;
 
 constexpr unsigned long long factorial(unsigned long long n) { return n <= 1 ? 1 : n * factorial(n - 1); }
 
-int main()
+int main(int argc, char **argv)
 {
 
-    cout << "factorial(): " << factorial(4) << "\n----------"
-         << endl;
+    cout << "factorial(): " << factorial(4) << "\n----------" << endl;
+
     //--------
 
     bool flag = true;
