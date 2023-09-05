@@ -1,17 +1,45 @@
-type - defines a set ofvalues with associated operation
+type 
+    - defines a set ofvalues with associated operation
 
-value - is set a bit interpreted as some type
+value 
+    - is set a bit interpreted as some type
 
-object - is some memory that holds a value of some type
+object 
+    - is some memory that holds a value of some type
 
-varibales - is names object
+varibales 
+    - is names object
 
 x = y
 L  R = value
 
-constexpr - bound to literal
+constexpr 
+    - bound to literal
 enum {n = 7}; - n is an rvalue() (no memory used)
 
 unsigned - ?
 
 size_t (#include <cstddef>) - when unsigned quantity
+
+** 
+    - maybe will the array contain of pointer elements
+
+const qualifier
+    - indicated that the item will not change in the current scope
+
+when incrementing the address it depends on the type size
+
+void pointer
+    - if you dont know what type
+
+primitive type:
+    - built in types
+
+reference 
+    - copies the value
+
+strcpy
+    - unsafe
+    - what if the destination does not have enough room reserved for the string being copied?
+    - it keeps going!
+    

@@ -1,26 +1,44 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-constexpr unsigned long long factorial(unsigned long long n) { return n <= 1 ? 1 : n * factorial(n - 1); }
+void arrs(int a[]);
+void *testFoo(char *dest, char *src);
 
 int main(int argc, char **argv)
 {
 
-    cout << "factorial(): " << factorial(4) << "\n----------" << endl;
+    char char1{'a'};
+    char char2{'b'};
 
-    //--------
+    // int *ptr_char1{&char1};
+    // int *ptr_char2{&char2};
 
-    bool flag = true;
-    int count1 = 0, count2 = 0;
-    (flag ? count1 : count2) = 4;
-    cout << "count1: " << count1 << " count2: " << count2 << endl;
-
-    int n = !flag ? count1 : count2;
-    cout << "n: " << n << endl;
-
+    testFoo(char1, char2);
+    // int arrays[5]{1, 2, 3, 4, 5};
+    // arrs(arrays);
     return 0;
 }
 
-string evenpos(const string &s)
+// char *strcpy(char *dest, char *src)
+// {
+
+//     cout << "*dest++ " << *dest++ << "*src++: " << *src++ << endl;
+//     char *temp = dest;
+//     while (*dest++ = *src++)
+//     {
+//         return temp;
+//     }
+// }
+void *testFoo(char *dest, char *src)
 {
+    cout << "*dest++ " << *dest++ << "*src++: " << *src++ << endl;
+}
+
+void arrs(int as[])
+{
+    // for (auto a : as)
+    // {
+    //     cout << a << endl;
+    // }
 }
