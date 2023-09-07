@@ -2,43 +2,23 @@
 #include <string>
 using namespace std;
 
-void arrs(int a[]);
-void *testFoo(char *dest, char *src);
-
-int main(int argc, char **argv)
+int main()
 {
+    char *foo[2];
+    char s1[] = "Peter", s2[] = "Justin", s3[] = "Ramos";
 
-    char char1{'a'};
-    char char2{'b'};
+    foo[0] = s1;
+    foo[1] = s2;
+    foo[2] = s3;
+    (s1)++;
+    cout << s1 << endl;
 
-    // int *ptr_char1{&char1};
-    // int *ptr_char2{&char2};
+    int *p = new int;
 
-    testFoo(char1, char2);
-    // int arrays[5]{1, 2, 3, 4, 5};
-    // arrs(arrays);
+    delete p;
+
+    int *q = new int[5];
+
+    delete[] q;
     return 0;
-}
-
-// char *strcpy(char *dest, char *src)
-// {
-
-//     cout << "*dest++ " << *dest++ << "*src++: " << *src++ << endl;
-//     char *temp = dest;
-//     while (*dest++ = *src++)
-//     {
-//         return temp;
-//     }
-// }
-void *testFoo(char *dest, char *src)
-{
-    cout << "*dest++ " << *dest++ << "*src++: " << *src++ << endl;
-}
-
-void arrs(int as[])
-{
-    // for (auto a : as)
-    // {
-    //     cout << a << endl;
-    // }
 }

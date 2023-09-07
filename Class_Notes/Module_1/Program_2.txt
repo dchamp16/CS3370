@@ -1,0 +1,7 @@
+heap manager
+fhead = free head
+
+start - overload the (new) heap
+build a fhead and will example if you have 5 pointer address
+check fhead if its full or has space 
+it allocate to the heap
