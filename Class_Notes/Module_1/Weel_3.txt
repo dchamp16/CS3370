@@ -1,4 +1,10 @@
 operator function 
     - overload
 
-static void* operator name[]
+static void* operator name[] - test
+void* name; - test
+
+placement new - research
+
+pointer punning
+    - require pointer and reinterpret_cast
