@@ -1,0 +1,4 @@
+operator function 
+    - overload
+
+static void* operator name[]
