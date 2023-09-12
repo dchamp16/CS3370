@@ -7,3 +7,9 @@ check fhead if its full or has space
 it allocate to the heap
 
 std::byte
+
+Template <typename T>
+std::byte[sizeof(T)];
+s* nextPointer
+
+loop through and assign it to new free space

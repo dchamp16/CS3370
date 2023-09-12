@@ -8,3 +8,7 @@ placement new - research
 
 pointer punning
     - require pointer and reinterpret_cast
+
+strut && union
+
+union array of blocks - research
