@@ -12,3 +12,18 @@ pointer punning
 strut && union
 
 union array of blocks - research
+
+pointer scope function
+
+ptr = fn(g1);
+
+delete ptr; // ptr dies since it was return from fn() function
+
+fn (){
+    foo *f{new Foo};
+return f
+}
+
+static KEYWORD - research
+    - dont live in just in stack but it live somewhere in the memory
+

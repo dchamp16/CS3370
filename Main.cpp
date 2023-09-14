@@ -3,32 +3,47 @@
 #include <cstring>
 using namespace std;
 
-union student
+class Foo
 {
-    int roll_no;
-    int phone_number;
-    char name[30];
+public:
+    static int n;
 };
-
+// int Foo::n
+int *test = &Foo::n;
 int main()
 {
-    union student p1;
-    p1.roll_no = 1;
-    p1.phone_number = 1234567822;
-    strcpy(p1.name, "Brown");
-    cout << "roll_no : " << p1.roll_no << endl;
-    cout << "phone_number : " << p1.phone_number << endl;
-    cout << "name : " << p1.name << endl;
-
-    // int x = 7;
-    // char *p = reinterpret_cast<char *>(&x);
-
-    // cout << &p << endl;
-
+    cout << test << endl;
     return 0;
 }
 
 // Main GRAVEYARD
+
+// union student
+// {
+//     int roll_no;
+//     int phone_number;
+//     char name[30];
+// };
+
+// int main()
+// {
+//     union student p1;
+//     p1.roll_no = 1;
+//     p1.phone_number = 1234567822;
+//     strcpy(p1.name, "Brown");
+//     cout << "roll_no : " << p1.roll_no << endl;
+//     cout << "phone_number : " << p1.phone_number << endl;
+//     cout << "name : " << p1.name << endl;
+
+//     // int x = 7;
+//     // char *p = reinterpret_cast<char *>(&x);
+
+//     // cout << &p << endl;
+
+//     return 0;
+// }
+
+// ----------------------
 
 // int main()
 // {
