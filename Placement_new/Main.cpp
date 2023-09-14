@@ -1,56 +1,46 @@
-#include <new>
 #include <iostream>
+#include <new>
 #include <string>
+
 using namespace std;
 
-class ComplexThing
+// Overload the multi-arg version of placement new
+void *operator new(size_t size, void *ptr, int x, const std::string &msg)
 {
-    int m;
-    string s;
+    cout << "Placement new called with int: " << x << " and string: " << msg << endl;
+    return ptr;
+}
+
+class Thing
+{
+    int m, n;
+    std::string str;
 
 public:
-    ComplexThing(int i = 0, string str = "") : m(i), s(str)
+    Thing(int i = 0, int j = 0, const std::string &s = "") : m(i), n(j), str(s)
     {
-        cout << "ComplexThing(" << m << ", " << s << ") initialized\n";
+        cout << "Thing(" << m << "," << n << ") with string '" << str << "' initialized\n";
     }
-    ~ComplexThing()
+    ~Thing()
     {
-        cout << "ComplexThing(" << m << ", " << s << ") destroyed\n";
+        cout << "Thing(" << m << "," << n << ") with string '" << str << "' destroyed\n";
     }
-    friend ostream &operator<<(ostream &os, const ComplexThing &t)
+
+    friend ostream &operator<<(ostream &os, const Thing &t)
     {
-        return os << '(' << t.m << ',' << t.s << ')';
+        return os << '(' << t.m << ',' << t.n << ") - " << t.str;
     }
 };
 
-// Overload operator new for placement new with additional int and string arguments
-void *operator new(size_t size, void *addr, int i, const string &str)
-{
-    new (addr) ComplexThing(i, str); // Calls the constructor with extra args
-    return addr;
-}
-
 int main()
 {
-    char storage[sizeof(ComplexThing) * 3];
+    char storage[sizeof(Thing)];
 
-    // Using our multi-arg placement new
-    for (int i = 0; i < 3; ++i)
-    {
-        new (storage + i * sizeof(ComplexThing), i + 1, "string" + to_string(i + 1)) ComplexThing;
-    }
+    Thing *p = new (storage, 42, "Hello World!") Thing(1, 2);
 
-    // Display them
-    for (int i = 0; i < 3; ++i)
-    {
-        cout << *reinterpret_cast<ComplexThing *>(storage + i * sizeof(ComplexThing)) << '\n';
-    }
+    cout << *p << endl;
 
-    // Manual cleanup
-    for (int i = 2; i >= 0; --i)
-    {
-        reinterpret_cast<ComplexThing *>(storage + i * sizeof(ComplexThing))->~ComplexThing();
-    }
+    p->~Thing();
 
     return 0;
 }
