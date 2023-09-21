@@ -1,0 +1,49 @@
+constructor initializer lists
+    ex:
+
+    class Foo {
+        const int c;
+        public:
+            Foo() : c() {}
+    }
+
+    int main(){
+        Foo f;
+    }
+
+    use =delete in the declation 
+        - and define no body, of course
+        - convenient for disabling copy or assignment
+
+    can apply to 
+        - default constructor
+        - copy aconstructor
+        - assignment operator
+
+    /*--------------------*/
+
+    input and output
+
+    $ g++ -o args args.cpp
+    $ ./args oen 2 three
+
+    #include <iostream>
+    using namespace std;
+
+    int main(int argc, char* argv[]){
+        for(int i = 0; i < argc; ++i){
+            count << argv[i] << "\n";
+        }
+    }
+
+
+    /* STRING */
+
+    string iterators
+
+    int main(){
+        string s("Now is the time!");
+        for(auto iter - s.begin(); iter != s.end(); ++iter){
+            cout << s << endl;
+        }
+    }
