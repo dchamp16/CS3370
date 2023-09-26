@@ -1,0 +1,42 @@
+Searching  String
+
+c, pos
+    - look for the character c strarting at position pos in s pos defaults to 0
+
+istringstream
+    - allowyou read from a string as if it us a stream(using >>)
+
+ostrinfstream
+    - you build by writing objects to an ostringstream(using  <<)
+    - to get the result strin gcall
+        - string s strm.str()
+        - strm.str(s)
+
+import i/o lcasses
+    - that use char as the udnerlying character type
+
+istream
+    - cin is an istream
+    - subclassess
+        - ifsteam for files
+        - istringstream
+
+eof (eofbit)
+    - attempt to read past the end of oa an input stream
+
+fail (failbit)
+    - operation failed
+
+bad (badbit)
+    - corrupted stream
+    - very rare
+
+good
+    - none of the above bits are stream
+    - the stream is live and usable
+
+while(ifst >> i){
+    // do code
+}
+
+friend function // research
