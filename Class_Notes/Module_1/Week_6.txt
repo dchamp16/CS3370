@@ -8,3 +8,29 @@ noexcept to a function delation
 - the compiler can use that information for optimazation
 - but make sure it really cant emit an exception
 - destructors must never throw exceptions
+
+std::runtime_error
+    - for unforeseen runtime_error
+std::logic_error
+    - careless programmer logic_error
+declare <stdexcept> // check this
+
+derived std::exception
+    - declared in <exception>
+
+separate operation that may fail from those that change state in you data
+only change state when exceptions can no longer occur
+
+SMART POINTER // research
+    - object that emulate pointers
+    - they hold the real pointers
+        - but the wrapper object lives on the stack
+        - its destructure calls delete on the real pointers
+    - Overloaded operators
+        - *
+        - ->
+unique_ptr
+    - are not copyable
+shared_ptr
+    - increment their reference count when copied
+    - and delete the raw pointer when count == 0
