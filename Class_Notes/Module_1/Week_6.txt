@@ -1,0 +1,10 @@
+throw
+    - is conceptually like a function call
+
+noexcept to a function delation
+    ex:
+        void f() noexcept{//your code}
+
+- the compiler can use that information for optimazation
+- but make sure it really cant emit an exception
+- destructors must never throw exceptions

@@ -1,18 +1,16 @@
 #include <iostream>
 #include <string>
-#include <cstring>
+#include <format>
 using namespace std;
 
-class Foo
-{
-public:
-    static int n;
-};
-// int Foo::n
-int *test = &Foo::n;
 int main()
 {
-    cout << test << endl;
+    string foo{"hello world"};
+    string first{"Peter"};
+    string last{"Ramos"};
+
+    cout << format("string {} has {} characters\n", foo, foo.size());
+    cout << format("{0:.2f} ", first);
     return 0;
 }
 

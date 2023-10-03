@@ -40,3 +40,5 @@ while(ifst >> i){
 }
 
 friend function // research
+
+
