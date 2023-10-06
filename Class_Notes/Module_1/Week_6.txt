@@ -34,3 +34,16 @@ unique_ptr
 shared_ptr
     - increment their reference count when copied
     - and delete the raw pointer when count == 0
+
+program 4
+    - vector
+        - compare both if v[1,2,3,4] compare v[1] == v[3] v[2] == v[4] rise and runtime_error
+        
+        template <typename T>
+        void copy(T* begin, T* end, T* dest){
+            while(begin!=end){
+                *dest++ = *begin++;
+            }
+        }
+
+Generic algorithms
