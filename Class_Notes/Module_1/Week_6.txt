@@ -38,7 +38,7 @@ shared_ptr
 program 4
     - vector
         - compare both if v[1,2,3,4] compare v[1] == v[3] v[2] == v[4] rise and runtime_error
-        
+
         template <typename T>
         void copy(T* begin, T* end, T* dest){
             while(begin!=end){
@@ -47,3 +47,20 @@ program 4
         }
 
 Generic algorithms
+    - iterator where to start and end.
+
+Non-mutating algorithms:
+for_each(b, e, do_this)
+find
+find_end
+find_if
+find_first_of
+adjacent_find
+count
+count_if
+search
+mismath
+equal
+
+mutating algorithms
+transform
