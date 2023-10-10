@@ -3,14 +3,20 @@
 #include <format>
 using namespace std;
 
+template <typename T>
+struct equalTo
+{
+    bool operator()(T a, T b)
+    {
+        return a == b;
+    }
+};
+
 int main()
 {
-    string foo{"hello world"};
-    string first{"Peter"};
-    string last{"Ramos"};
-
-    cout << format("string {} has {} characters\n", foo, foo.size());
-    cout << format("{0:.2f} ", first);
+    equalTo<double> intEqual;
+    std::cout << intEqual(1, 2) << std::endl; // prints "0"
+    std::cout << intEqual(2, 2) << std::endl; // prints "1"
     return 0;
 }
 
