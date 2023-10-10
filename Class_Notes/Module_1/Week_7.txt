@@ -1,0 +1,73 @@
+In C++, transform is a function that applies a given operation to each element of a range and stores the result in another range. It takes three input ranges: the first range is the source range, the second range is the destination range, and the third range is the range of the operation to be applied. The operation can be a function or a lambda expression.
+
+Here's an example of using transform to square each element of a vector and store the result in another vector:
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> v1{1, 2, 3, 4, 5};
+    std::vector<int> v2(v1.size());
+
+    std::transform(v1.begin(), v1.end(), v2.begin(), [](int x) { return x * x; });
+
+    for (auto i : v2) {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+
+output: 1 4 9 16 25
+
+accumalte(beg, end, init)
+accumalte(beg, end, init, bin_function)
+inner_product
+partial_sum
+adjacent
+
+predicate function is a bool function
+
+overloading operator()
+    - In C++, operator() is the function call operator. It is used to define a class or struct that can be called like a function. This is known as a function object or a functor.
+Overloading the operator() allows you to define the behavior of the function object when it is called. This can be useful in situations where you want to encapsulate some behavior in a class or struct and make it callable like a function.
+
+Here's an example of overloading the operator() to define a function object that adds two numbers:
+
+struct Adder {
+    int operator()(int a, int b) {
+        return a + b;
+    }
+};
+
+int main() {
+    Adder add;
+    int result = add(1, 2);
+    std::cout << result << std::endl; // prints "3"
+    return 0;
+}
+
+In this example, the Adder struct overloads the operator() to define a function object that adds two numbers. The operator() takes two integer arguments and returns their sum.
+
+The Adder struct can then be instantiated like a regular object and called like a function. In the main function, an instance of Adder is created and called with the arguments 1 and 2, which returns 3.
+
+differecne between struct and class
+    - By default, the member variables and member functions in a struct are public, while the member variables and member functions in a class are private. This means that in a struct, all member variables and member functions can be accessed from outside the struct, while in a class, they cannot.
+
+template <typename T>
+    struct equalTo{
+    T operator()(par1,par2){
+        return // do something
+        }   
+    }
+
+lambda
+    - annoymous function
+    - can be assined to a variables- can access urrounding variables
+    - can be return from a function
+    - Syttax
+        - [<capture directive>](<args>){return <exp>}
+        - [<capture directive>](<args>)->type{<body>}
+    
