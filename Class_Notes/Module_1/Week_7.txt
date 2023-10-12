@@ -134,3 +134,11 @@ auto lambda = [&x]() {
 };
 lambda(); // prints "x = 43"
 std::cout << "x = " << x << std::endl; // prints "x = 43"
+
+iterator taxonomy
+
+    - Input iterators: These iterators provide read-only access to a sequence of values, and they can be used to read each value in the sequence exactly once. Input iterators support the ++ operator to move to the next element, and the * operator to dereference the iterator and access the current element.
+    - Output iterators: These iterators provide write-only access to a sequence of values, and they can be used to write each value in the sequence exactly once. Output iterators support the ++ operator to move to the next element, and the * operator to write a value to the current element.
+    - Forward iterators: These iterators provide read-write access to a sequence of values, and they can be used to read or write each value in the sequence exactly once. Forward iterators support the same operations as input and output iterators, as well as the ability to compare two iterators for equality or inequality.
+    - Bidirectional iterators: These iterators provide read-write access to a sequence of values, and they can be used to read or write each value in the sequence in any order. Bidirectional iterators support the same operations as forward iterators, as well as the ability to move to the previous element using the -- operator.
+    - Random access iterators: These iterators provide read-write access to a sequence of values, and they can be used to read or write each value in the sequence in any order. Random access iterators support the same operations as bidirectional iterators, as well as the ability to perform arithmetic operations such as + and - to move the iterator to a specific position in the sequence, and the ability to access any element in the sequence directly using the [] operator.
