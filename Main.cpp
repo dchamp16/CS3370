@@ -1,8 +1,34 @@
 #include <iostream>
 #include <string>
 #include <format>
+#include <vector>
 using namespace std;
 
+int main()
+{
+    // initialize a vector of integers with the values {1, 2, 3, 4, 5}
+    vector<int> numbers = {1, 2, 3, 4, 5};
+    numbers.push_back(10);
+
+    if (!numbers.empty())
+    {
+        for (int num : numbers)
+        {
+            cout << num << endl;
+        }
+    }
+
+    // print the memory address of the first element in the vector to the console
+    cout << "length:\n"
+         << numbers.size() << endl;
+
+    // return 0 to indicate successful program execution
+    return 0;
+}
+
+// Main GRAVEYARD
+
+/*
 template <typename T>
 struct equalTo
 {
@@ -19,9 +45,7 @@ int main()
     std::cout << intEqual(2, 2) << std::endl; // prints "1"
     return 0;
 }
-
-// Main GRAVEYARD
-
+*/
 // union student
 // {
 //     int roll_no;
