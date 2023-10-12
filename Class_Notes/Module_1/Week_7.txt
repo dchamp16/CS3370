@@ -1,3 +1,46 @@
+// include the algorithm library
+#include <algorithm>
+
+// sort a range of elements
+std::sort(first, last);
+
+// find an element in a range
+std::find(first, last, value);
+
+// count the number of occurrences of an element in a range
+std::count(first, last, value);
+
+// copy a range of elements to another range
+std::copy(first, last, result);
+
+// remove elements from a range that satisfy a condition
+std::remove_if(first, last, condition);
+
+// transform a range of elements using a function
+std::transform(first, last, result, function);
+
+// generate a range of elements using a function
+std::generate(first, last, function);
+
+// shuffle a range of elements
+std::shuffle(first, last, generator);
+
+// merge two sorted ranges into a single sorted range
+std::merge(first1, last1, first2, last2, result);
+
+// compute the union of two sorted ranges
+std::set_union(first1, last1, first2, last2, result);
+
+// compute the intersection of two sorted ranges
+std::set_intersection(first1, last1, first2, last2, result);
+
+// compute the difference of two sorted ranges
+std::set_difference(first1, last1, first2, last2, result);
+
+// compute the symmetric difference of two sorted ranges
+std::set_symmetric_difference(first1, last1, first2, last2, result);
+
+
 In C++, transform is a function that applies a given operation to each element of a range and stores the result in another range. It takes three input ranges: the first range is the source range, the second range is the destination range, and the third range is the range of the operation to be applied. The operation can be a function or a lambda expression.
 
 Here's an example of using transform to square each element of a vector and store the result in another vector:
@@ -71,3 +114,23 @@ lambda
         - [<capture directive>](<args>){return <exp>}
         - [<capture directive>](<args>)->type{<body>}
     
+    CAPTURING
+
+    - In C++, capturing is a feature of lambda expressions that allows them to access variables from the    enclosing scope. When a lambda expression captures a variable, it creates a copy of that variable and stores it within the lambda object. The captured variable can then be used within the lambda expression as if it were a local variable.
+There are two ways to capture variables in C++ lambda expressions: by value and by reference. When a variable is captured by value, a copy of the variable is made and stored within the lambda object. When a variable is captured by reference, a reference to the variable is stored within the lambda object, allowing the lambda expression to modify the original variable.
+
+Here's an example of capturing a variable by value in a lambda expression:
+
+int x = 42;
+auto lambda = [x]() {
+    std::cout << "x = " << x << std::endl;
+};
+lambda(); // prints "x = 42"
+
+int x = 42;
+auto lambda = [&x]() {
+    x = 43;
+    std::cout << "x = " << x << std::endl;
+};
+lambda(); // prints "x = 43"
+std::cout << "x = " << x << std::endl; // prints "x = 43"
