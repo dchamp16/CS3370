@@ -142,3 +142,32 @@ iterator taxonomy
     - Forward iterators: These iterators provide read-write access to a sequence of values, and they can be used to read or write each value in the sequence exactly once. Forward iterators support the same operations as input and output iterators, as well as the ability to compare two iterators for equality or inequality.
     - Bidirectional iterators: These iterators provide read-write access to a sequence of values, and they can be used to read or write each value in the sequence in any order. Bidirectional iterators support the same operations as forward iterators, as well as the ability to move to the previous element using the -- operator.
     - Random access iterators: These iterators provide read-write access to a sequence of values, and they can be used to read or write each value in the sequence in any order. Random access iterators support the same operations as bidirectional iterators, as well as the ability to perform arithmetic operations such as + and - to move the iterator to a specific position in the sequence, and the ability to access any element in the sequence directly using the [] operator.
+
+    GitHub Copilot: Here's an example of a function that reads input from a stream and separates words by whitespace:
+
+```cpp
+#include <iostream>
+#include <string>
+
+void readWords(std::istream& input) {
+    std::string word;
+    while (input >> word) {
+        std::cout << "Word: " << word << std::endl;
+    }
+    if (input.eof()) {
+        std::cout << "End of file reached." << std::endl;
+    } else if (input.fail()) {
+        std::cout << "Input failed." << std::endl;
+    } else {
+        std::cout << "Unknown error." << std::endl;
+    }
+}
+```
+
+In this example, we define a function called `readWords` that takes an input stream as an argument. We then define a string variable `word` to hold each word that we read from the stream.
+
+We use a `while` loop to read words from the stream using the `>>` operator, which separates words by whitespace. For each word that we read, we print it to the console using `std::cout`.
+
+After the loop, we check if the end of the file has been reached using the `eof()` function, or if the input failed using the `fail()` function. If neither of these conditions is true, we print an "unknown error" message to the console.
+
+Note that this function will read words from the input stream until the end of the file is reached, or until an error occurs. If you want to read a specific number of words from the input stream, you can modify the function to include a counter variable and a condition to check the number of words that have been read.
