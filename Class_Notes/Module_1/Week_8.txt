@@ -1,0 +1,8 @@
+Sequence Container
+    - vector: flexible size array, support fast random access
+    - deque: double ended queue support fast random access
+    - list: double liknked list support only bidirectional sequatial access
+    - forward_list: singly linked list support only sequentiail access in one direction
+    - array: fixed size array support fast random access
+    - string: a specialize container similar to vector that contains characters. fast random access
+
