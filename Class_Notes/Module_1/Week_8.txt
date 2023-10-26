@@ -6,3 +6,33 @@ Sequence Container
     - array: fixed size array support fast random access
     - string: a specialize container similar to vector that contains characters. fast random access
 
+array
+    - fixed in compile time
+    - a template  wrapper that holds a static array
+    - data stored locally
+        - provides stl like features
+            - begin(), end(), size(), empty(), at(), front(), back()
+
+#include <iostream>
+#include <array>
+
+int main()
+{
+    array<int, 10> fooArr{1, 2, 3, 4, 5};
+
+    for (int a : fooArr)
+    {
+        cout << "size: " << sizeof(a) << " value: " << a << endl;
+    }
+    return 0;
+}
+
+emplace_back vs push_back
+
+push_back
+    - requires a previously constructed object to copy or move into the container
+emplace_back
+    - builds the object in place
+    - from arguments you provides
+    - not temporary object created
+

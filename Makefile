@@ -2,6 +2,6 @@ CC = g++
 
 all: compile run
 compile:
-	${CC} ${ARGS}.cpp -std=c++20 -o ${ARGS}
+	${CC} Main.cpp -std=c++20 -o Main
 run:
-	./${ARGS}.exe
+	./Main.exe
