@@ -1,0 +1,121 @@
+specialize
+    - stack 
+        - last in first out
+
+#include <iostream>
+#include <stack>
+
+int main() {
+    std::stack<int> myStack;
+
+    // Push elements onto the stack
+    myStack.push(1);
+    myStack.push(2);
+    myStack.push(3);
+
+    // Print the top element
+    std::cout << "Top element: " << myStack.top() << std::endl;
+
+    // Pop elements from the stack
+    while (!myStack.empty()) {
+        std::cout << "Popping " << myStack.top() << std::endl;
+        myStack.pop();
+    }
+
+    return 0;
+}
+
+
+    - queue
+        - first in first out
+
+#include <iostream>
+#include <queue>
+
+int main() {
+    std::queue<int> myQueue;
+
+    // Enqueue elements
+    myQueue.push(1);
+    myQueue.push(2);
+    myQueue.push(3);
+
+    // Print the front element
+    std::cout << "Front element: " << myQueue.front() << std::endl;
+
+    // Dequeue elements
+    while (!myQueue.empty()) {
+        std::cout << "Dequeuing " << myQueue.front() << std::endl;
+        myQueue.pop();
+    }
+
+    return 0;
+}
+
+    - priority_queue
+        - doesnt matter who first in as long it was priority
+#include <iostream>
+#include <queue>
+
+int main() {
+    std::priority_queue<int> myPriorityQueue;
+
+    // Enqueue elements
+    myPriorityQueue.push(1);
+    myPriorityQueue.push(3);
+    myPriorityQueue.push(2);
+
+    // Print the top element
+    std::cout << "Top element: " << myPriorityQueue.top() << std::endl;
+
+    // Dequeue elements
+    while (!myPriorityQueue.empty()) {
+        std::cout << "Dequeuing " << myPriorityQueue.top() << std::endl;
+        myPriorityQueue.pop();
+    }
+
+    return 0;
+}
+
+    - pair
+
+    #include <iostream>
+#include <utility>
+
+int main() {
+    // Declare a pair
+    std::pair<int, std::string> p;
+
+    // Assign values to the pair
+    p = std::make_pair(1, "GitHub Copilot");
+
+    // Print the elements of the pair
+    std::cout << "The pair is: (" << p.first << ", " << p.second << ")" << std::endl;
+
+    return 0;
+}
+
+    - map
+        - map is like object in javascript has key and value
+        
+#include <iostream>
+#include <map>
+
+int main() {
+    // Create a map
+    std::map<std::string, int> m;
+
+    // Insert elements into the map
+    m["GitHub Copilot"] = 1;
+    m["AI"] = 2;
+    m["Programming"] = 3;
+
+    // Print the elements of the map
+    for(const auto& pair : m) {
+        std::cout << "The key is: " << pair.first << ", The value is: " << pair.second << std::endl;
+    }
+
+    return 0;
+}
+
+
