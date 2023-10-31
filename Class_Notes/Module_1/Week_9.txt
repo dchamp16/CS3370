@@ -97,7 +97,7 @@ int main() {
 
     - map
         - map is like object in javascript has key and value
-        
+
 #include <iostream>
 #include <map>
 
@@ -118,4 +118,73 @@ int main() {
     return 0;
 }
 
+stricmp
 
+#include <cstring>
+#include <iostream>
+
+int main() {
+    char str1[] = "Hello";
+    char str2[] = "hello";
+
+    // Compare strings using stricmp
+    int result = stricmp(str1, str2);
+
+    if(result == 0) {
+        std::cout << "The strings are equal.";
+    } else {
+        std::cout << "The strings are not equal.";
+    }
+
+    return 0;
+}
+
+strcasecmp
+
+
+set
+
+#include <iostream>
+#include <set>
+
+int main() {
+    std::set<int> s;
+
+    // Insert elements
+    s.insert(1);
+    s.insert(2);
+    s.insert(2); // This will not be inserted because 2 is already in the set
+
+    // Print elements
+    for(int element : s) {
+        std::cout << element << std::endl;
+    }
+
+    return 0;
+}
+
+output: 1 2
+
+
+multiset
+
+#include <iostream>
+#include <set>
+
+int main() {
+    std::multiset<int> ms;
+
+    // Insert elements
+    ms.insert(1);
+    ms.insert(2);
+    ms.insert(2); // This will be inserted because a multiset allows duplicates
+
+    // Print elements
+    for(int element : ms) {
+        std::cout << element << std::endl;
+    }
+
+    return 0;
+}
+
+output 1 2 2
