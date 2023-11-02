@@ -1,3 +1,7 @@
+which sequence support random access to elements
+vector,deque,array
+
+
 specialize
     - stack 
         - last in first out
@@ -188,3 +192,85 @@ int main() {
 }
 
 output 1 2 2
+
+tuple
+    - A tuple in C++ is a single data structure that can hold elements of different types. It's a way to group together related data of different types under a single name. The std::tuple is a part of the C++ Standard Library.
+
+#include <tuple>
+#include <iostream>
+
+int main() {
+    // Create a tuple
+    std::tuple<int, std::string, float> myTuple(10, "Hello", 3.14);
+
+    // Access elements
+    int myInt = std::get<0>(myTuple);
+    std::string myString = std::get<1>(myTuple);
+    float myFloat = std::get<2>(myTuple);
+
+    std::cout << "Int: " << myInt << "\n";
+    std::cout << "String: " << myString << "\n";
+    std::cout << "Float: " << myFloat << "\n";
+
+    return 0;
+}
+
+structure binding
+    - same with the destructure
+
+C++
+
+#include <tuple>
+#include <iostream>
+
+int main() {
+    std::tuple<int, std::string, float> myTuple(10, "Hello", 3.14);
+    auto [myInt, myString, myFloat] = myTuple;
+
+    std::cout << "Int: " << myInt << "\n";
+    std::cout << "String: " << myString << "\n";
+    std::cout << "Float: " << myFloat << "\n";
+
+    return 0;
+}
+
+
+VS
+
+javascript
+
+let myArray = [1, "Hello", 3.14];
+let [myInt, myString, myFloat] = myArray;
+
+console.log("Int: " + myInt);
+console.log("String: " + myString);
+console.log("Float: " + myFloat);
+
+
+erase operation
+    - c.erase(k) remove every elemt with key k from c return size_type
+
+    - c.erase(p) This form is used with sequence containers like std::vector or std::list, and also with associative containers. It removes the element at position p in the container c. For sequence containers, p is an iterator pointing to the element to be removed. For associative containers, p is an iterator to the key-value pair to be removed.
+
+    - c.erase(k,p) This form is used with sequence containers. It removes elements in the range [k, p) from the container c. Here k and p are iterators specifying the range to be removed.
+
+#include <vector>
+#include <iostream>
+
+int main() {
+    std::vector<int> myVector = {1, 2, 3, 4, 5};
+
+    // Erase the third element
+    myVector.erase(myVector.begin() + 2);
+
+    // Print the vector
+    for (int i : myVector) {
+        std::cout << i << " ";
+    }
+
+    return 0;
+}
+
+map and set use support
+    - Necessary to maintain proper oder in the underlying tree data structure
+    - they test for eruivalent, not not equality to maintain unueness
