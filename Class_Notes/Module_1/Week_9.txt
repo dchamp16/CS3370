@@ -324,3 +324,6 @@ $: Matches the end of a line.
 {n,}: Matches n or more occurrences of the preceding character or group.
 {n,m}: Matches between n and m occurrences of the preceding character or group.
 Remember to escape these special characters with \\ if you want to match them literally in a string.
+
+ostream_itirator
+    - It seems like you're referring to std::ostream_iterator, which is a type of output iterator in C++ that can write to output streams like std::cout or file streams.
