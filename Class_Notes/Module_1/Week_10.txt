@@ -1,0 +1,2 @@
+bitstring
+    - In C++, you can represent a bit string using the std::bitset class from the <bitset> library. A std::bitset is a sequence of bits. You can manipulate its individual bits just like an array.
