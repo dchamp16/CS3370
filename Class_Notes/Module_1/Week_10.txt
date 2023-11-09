@@ -46,6 +46,24 @@ uses the && syntax
 
 They are used to efficiently handle resources when an object is a temporary or about to be discarded.
 
+- we now cal regular references lvalue references
+- rvalue reference only represent object soon to be destroyed
+    - temporary, nameless values
+    - there references are unique
+- variables are lvalues in their scioe
+    - even if they were declared with &&
+
+lvalue: An lvalue (locator value) represents an object that occupies some identifiable location in memory (i.e., has an address). lvalues can appear on either the left-hand or the right-hand side of an assignment operator. The 'l' in lvalue stands for 'left'.
+
+rvalue: An rvalue (read value) is an expression that does not represent an object occupying some identifiable location in memory. rvalues are typically temporary objects or values, and can only appear on the right-hand side of an assignment operator. The 'r' in rvalue stands for 'right'.
+
+mechanic move constructor
+    - primitive jsut copy them
+    - pointers just copu the pointers
+    - objects including library object std::move()
+    - use the initializer list to initalize the members
+importatn the r value object must be in a destructible state
+
 
 
 
