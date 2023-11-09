@@ -1,2 +1,51 @@
 bitstring
     - In C++, you can represent a bit string using the std::bitset class from the <bitset> library. A std::bitset is a sequence of bits. You can manipulate its individual bits just like an array.
+
+#include <cstring>
+
+class String {
+    int size;
+    char* data;
+
+public:
+    // Constructor
+    String(const char* input) {
+        size = strlen(input);
+        data = new char[size + 1];
+        strcpy(data, input);
+    }
+    // Copy constructor
+    String(const String& s) {
+        size = s.size;
+        data = new char[size + 1];
+        strcpy(data, s.data);
+    }
+    // Destructor
+    ~String() {
+        delete[] data;
+    }
+};
+
+effiecieny in C++ function
+    - we often create a referrence
+very often copies are temporaries
+    - they have no name
+    - they exist a very short
+threre are times when we can acoid a full copu of a temporary by stealing its resources
+    - we actually do a shallow coyp/assign
+    - the temporary wont need to keep those resources anyways
+we need to discren between a temporaru and an object that persists beyond the current expression
+
+rvalue referrence
+    - only bind to temporaries
+uses the && syntax
+    - T::T(T&& t){...}
+        - T::T(T&& t) {...}: This is the move constructor. It's used to create a new object from a temporary object (an rvalue) of the same type. The && denotes an rvalue reference. The move constructor "steals" the resources from the temporary object, instead of making a costly copy, and leaves the temporary object in a valid but unspecified state.
+    - T& operator=(T&& t){...}
+        - T& operator=(T&& t) {...}: This is the move assignment operator. It's used to efficiently transfer resources from a temporary object to an existing object. Like the move constructor, it "steals" the resources and leaves the temporary object in a valid but unspecified state.
+
+They are used to efficiently handle resources when an object is a temporary or about to be discarded.
+
+
+
+
