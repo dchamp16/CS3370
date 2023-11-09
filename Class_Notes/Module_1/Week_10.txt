@@ -64,6 +64,30 @@ mechanic move constructor
     - use the initializer list to initalize the members
 importatn the r value object must be in a destructible state
 
+Operator Overloading
+- The active selection, "Operator Overloading," refers to a feature in C++ programming that allows programmers to redefine the way operators work with user-defined types (classes). This is done by implementing a special kind of function called an operator function.
 
+When you create a class in C++, you can define what an operator like +, -, ==, or != does when used with objects of your class. This is called operator overloading. For example, if you have a Vector class representing a mathematical vector, you can overload the + operator to provide vector addition.
 
+Operator overloading can make your code more intuitive and easier to read, because it allows user-defined types to behave like built-in types when operated upon. However, it should be used wisely, as it can also make code more complex and harder to understand if used improperly. The behavior of overloaded operators should be intuitive and consistent with how the operators work with built-in types.
+
+- complex number
+    - a number that can be expressed in the form a + bi, where a and b are real numbers, and i is a solution of the equation x^2 = -1. In this expression, a is the real part and b is the imaginary part of the complex number.
+
+#include <iostream>
+#include <complex>
+
+int main() {
+    std::complex<double> num1(2.0, 3.0);  // 2 + 3i
+    std::complex<double> num2(1.5, 2.5);  // 1.5 + 2.5i
+
+    std::complex<double> sum = num1 + num2;
+
+    std::cout << "The sum of " << num1 << " and " << num2 << " is " << sum << "\n";
+
+    return 0;
+}
+output: The sum of (2,3) and (1.5,2.5) is (3.5,5.5)
+
+In this example, we create two complex numbers num1 and num2 using the std::complex class from the <complex> library. We then add these numbers together and print the result.
 
