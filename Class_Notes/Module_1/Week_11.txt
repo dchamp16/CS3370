@@ -1,0 +1,27 @@
+complex
+    -   In C++, std::complex is a template class in the standard library that provides complex number arithmetic for any numeric scalar type. The class is defined in the <complex> header file.
+
+    #include <complex>
+
+std::complex<double> num1(2.0, 3.0);  // Represents the complex number 2 + 3i
+std::complex<double> num2(1.5, 2.5);  // Represents the complex number 1.5 + 2.5i
+
+The std::complex class provides several functions to work with complex numbers, such as real() to get the real part, imag() to get the imaginary part, and abs() to get the magnitude.
+
+#include <complex>
+#include <iostream>
+
+int main() {
+    std::complex<double> num(2.0, 3.0);  // 2 + 3i
+
+    std::cout << "Real part: " << num.real() << "\n";
+    std::cout << "Imaginary part: " << num.imag() << "\n";
+    std::cout << "Magnitude: " << abs(num) << "\n";
+
+    return 0;
+}
+
+output:
+Real part: 2
+Imaginary part: 3
+Magnitude: 3.60555
