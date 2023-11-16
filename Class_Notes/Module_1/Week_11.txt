@@ -26,3 +26,19 @@ Real part: 2
 Imaginary part: 3
 Magnitude: 3.60555
 
+
+Creating class
+class Rectangle {
+    int width, height;
+
+public:
+    // Constructor
+    Rectangle(int w, int h) {
+        width = w;
+        height = h;
+    }
+
+    int area() {
+        return width * height;
+    }
+};
