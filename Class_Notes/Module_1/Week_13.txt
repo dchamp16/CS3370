@@ -1,0 +1,21 @@
+parallel computing
+    - Parallel computing in C++ refers to the technique of utilizing multiple processors or cores to execute a program simultaneously. This approach enhances the performance and efficiency of computationally intensive applications by distributing the workload among multiple processing units, enabling faster execution.
+
+- Pthreads: Pthreads (POSIX Threads) is a native C++ library that provides APIs for creating and managing threads. Threads are lightweight processes that share the same memory space, enabling efficient communication and data sharing between them.
+
+- OpenMP: OpenMP is a portable and cross-platform standard for parallel programming in C, C++, and Fortran. It provides compiler directives and runtime library support for parallelizing loops, tasks, and data sections.
+
+- C++ Standard Library: The C++ Standard Library provides parallel algorithms for various data structures, such as vectors and arrays. These algorithms can leverage multiple cores or processors to improve the performance of data manipulation operations.
+
+- GPU Computing: C++ can be used to develop programs that utilize the parallel processing capabilities of GPUs (Graphics Processing Units). Libraries like CUDA (Compute Unified Device Architecture) and OpenCL (Open Computing Language) provide APIs for programming GPUs to accelerate computations.
+
+- Task-Based Parallelism: Libraries like Intel TBB (Threading Building Blocks) and HPCH (High Performance Computing Parallel) provide abstractions and tools for managing parallel tasks and data dependencies.
+
+- Message Passing: Message passing libraries like MPI (Message Passing Interface) enable communication and synchronization between processes running on different machines or processors.
+
+- C++ asynchronous programming refers to the technique of executing code concurrently without blocking the main thread. This approach enables more responsive and efficient programs by utilizing multiple processing units or cores to handle tasks simultaneously
+
+
+Atomic Operation
+    -
+In C++, an atomic operation is an indivisible operation that cannot be interrupted by other threads. This ensures that the operation is executed completely and consistently, even if multiple threads are attempting to access the same data simultaneously. Atomic operations are essential for concurrency programming in C++, as they prevent data races and ensure that data is accessed and modified in a safe and predictable manner.

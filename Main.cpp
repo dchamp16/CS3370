@@ -1,19 +1,37 @@
 #include <iostream>
 #include <string>
-#include <format>
+//#include <format>
 #include <vector>
-#include <array>
+//#include <array>
+#include <thread>
 using namespace std;
+
+void testStr(vector<string> sv){
+    for(string s : sv) {
+        cout << "value: " << s << endl;
+    }
+}
+
+void testInt(vector<int> iv){
+    for(int i : iv) {
+        cout << "value: " << i << endl;
+    }
+}
 
 int main()
 {
-    array<int, 10> fooArr{1, 2, 3, 4, 5};
-    fooArr[5] = 90;
+    vector<int> nums = {1,2,3,4,5};
+    vector<string> str = {"Peter", "justine", "Lauren", "jerei", "ramos"};
 
-    for (int a : fooArr)
-    {
-        cout << "size: " << sizeof(a) << " value: " << a << " location: " << &a << endl;
-    }
+    testStr(str);
+    jthread thread1(testInt,nums);
+    thread1.join();
+
+
+//    jthread thread2(testStr,str);
+//    thread2.join();
+
+
     return 0;
 }
 
