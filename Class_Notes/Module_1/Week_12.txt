@@ -1,0 +1,65 @@
+compile time code generation
+    - sepearate code version are automatically generated
+    - On-demand code generation
+        - implicit and explicit
+    - potential for code bloat
+
+template parameters
+    - type parameters
+        -  the most common
+        sample:
+
+        template <typename T>
+        size_t size_of() {
+          return sizeof(T);
+        }
+
+    - non-type
+        - compile time intergral values
+        sample:
+
+        template <typename T, size_t N>
+        std::vector<T> first_n(const std::vector<T>& v) {
+          std::vector<T> result(N);
+          for (size_t i = 0; i < N; i++) {
+            result[i] = v[i];
+          }
+          return result;
+        }
+
+    - template
+        - template template paramters
+        sample:
+
+        template <template <typename> class T>
+        std::vector<T<int>> create_vector() {
+          std::vector<T<int>> v;
+          v.push_back(T<int>(1));
+          v.push_back(T<int>(2));
+          v.push_back(T<int>(3));
+          return v;
+        }
+
+program 7
+
+use threads
+
+step1 generate random integered - random integer queue ->
+step 2 filter out multiples of 3 - with no multiple of 3 ->
+step 3 group ints to 10 files
+
+concurrency
+    - Concurrency is like a single-lane bridge that can handle one car at a time. However, cars can still pass each other at different points on the bridge, giving the illusion of multiple cars moving simultaneously.
+    - Ability of a program to have multiple tasks that can make progress independently
+    - Can be achieved on a single-core processor
+    - Can improve the responsiveness of a program
+    - Can be more complex to implement than sequential code
+paralelism
+    - Parallelism is like a multi-lane bridge where multiple cars can move simultaneously, utilizing the available lanes to improve traffic flow.
+    - Ability of a program to have multiple tasks that are running at the same time on different hardware resources
+    - Requires multiple hardware resources, such as multiple cores or processors
+    - Can improve the throughput of a program
+    - Can be more complex to implement than concurrent code
+
+
+
